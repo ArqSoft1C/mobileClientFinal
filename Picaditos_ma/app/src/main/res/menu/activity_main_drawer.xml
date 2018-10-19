@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_my_profile"
+            android:title="Mi Perfil" />
+
+        <item android:title="Equipos">
+            <menu>
+                <item
+                    android:id="@+id/nav_my_teams"
+                    android:title="   Mis Equipos" />
+                <item
+                    android:id="@+id/nav_create_team"
+                    android:title="   Crear Equipo" />
+            </menu>
+        </item>
+        <item android:title="Partidos">
+            <menu>
+                <item
+                    android:id="@+id/nav_my_matches"
+                    android:title="   Mis Partidos" />
+                <item
+                    android:id="@+id/nav_request_match"
+                    android:title="   Armar Picadito" />
+            </menu>
+        </item>
+        <item android:title="Canchas">
+            <menu>
+                <item
+                    android:id="@+id/nav_courts"
+                    android:title="   Localizar Canchas" />
+            </menu>
+        </item>
+        <item android:title="Mensajes">
+            <menu>
+                <item
+                    android:id="@+id/nav_inbox"
+                    android:title="   Mensajes Recibidos" />
+                <item
+                    android:id="@+id/nav_send_message"
+                    android:title="   Enviar Mensaje" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

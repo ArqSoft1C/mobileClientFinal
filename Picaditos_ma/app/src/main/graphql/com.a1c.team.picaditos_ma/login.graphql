@@ -1,0 +1,20 @@
+mutation LoginMutation(
+  $email: String!
+  $password: String!
+  ){
+  signIn(
+     email: $email,
+     password: $password
+  ){
+     id
+     name
+     username
+     lastname
+     picture
+     phone
+     token
+     client
+     uid
+     email
+  }
+}
