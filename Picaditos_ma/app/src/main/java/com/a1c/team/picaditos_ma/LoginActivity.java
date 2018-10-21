@@ -301,7 +301,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                 user.setUsername(response.data().signIn.username);
 
                                 Log.d(TAG, "answer2: "+response.data().signIn().name());
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, CreateMatch.class);
                                 startActivity(intent);
 
                             }else{

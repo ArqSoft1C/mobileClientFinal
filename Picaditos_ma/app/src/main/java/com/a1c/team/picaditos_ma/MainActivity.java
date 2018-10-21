@@ -90,7 +90,9 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.main_container, new MyTeamsFragment()).commit();
         } else if (id == R.id.nav_create_team) {
             fragmentManager.beginTransaction().replace(R.id.main_container, new CreateTeamFragment()).commit();
-        } else if (id == R.id.nav_my_matches) {
+        } else if (id == R.id.nav_create_match) {
+            fragmentManager.beginTransaction().replace(R.id.main_container, new CreateMatchFragment()).commit();
+        }else if (id == R.id.nav_my_matches) {
             fragmentManager.beginTransaction().replace(R.id.main_container, new MyMatchesFragment()).commit();
         } else if (id == R.id.nav_request_match) {
             fragmentManager.beginTransaction().replace(R.id.main_container, new RequestMatchFragment()).commit();

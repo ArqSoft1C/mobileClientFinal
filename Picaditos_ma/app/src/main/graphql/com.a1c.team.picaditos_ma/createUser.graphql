@@ -1,0 +1,23 @@
+mutation CreateUserMutation(
+    $name: String!
+    $lastname: String!
+    $username: String!
+    $phone: String!
+    $picture: String!
+    $email: String!
+    $password: String!
+    $password_confirmation: String!
+  ){
+  createUser(user:{
+    name: $name
+    lastname: $lastname
+    username: $username
+    phone: $phone
+    picture: $picture
+    email: $email
+    password: $password
+    password_confirmation: $password_confirmation
+  }) {
+    email
+  }
+}

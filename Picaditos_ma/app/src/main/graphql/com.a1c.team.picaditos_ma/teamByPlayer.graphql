@@ -1,0 +1,6 @@
+query TeamByPlayer($player_name:String!){
+            teamByPlayer(player_name:$player_name){
+                name
+                id
+          }
+        }

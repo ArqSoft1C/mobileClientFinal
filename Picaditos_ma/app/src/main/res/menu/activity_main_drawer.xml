@@ -21,6 +21,9 @@
         <item android:title="Partidos">
             <menu>
                 <item
+                    android:id="@+id/nav_create_match"
+                    android:title="   Crear Partido" />
+                <item
                     android:id="@+id/nav_my_matches"
                     android:title="   Mis Partidos" />
                 <item
