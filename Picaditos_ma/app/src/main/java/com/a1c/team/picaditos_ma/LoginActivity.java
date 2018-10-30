@@ -35,6 +35,7 @@ import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.annotation.Nonnull;
@@ -53,8 +54,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-    Context context = this;
-    Button b_register;
 
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     @Override
@@ -120,19 +119,26 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
+
+        if(TextUtils.isEmpty(password)){
+            mPasswordView.setError("Campo Requerido");
+            focusView = mPasswordView;
+            cancel = true;
+        }
+
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
+            mPasswordView.setError("La contraseña es demasiado corta (Debe tener al menos 8 caracteres)");
             focusView = mPasswordView;
             cancel = true;
         }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
+            mEmailView.setError("Campo requerido!");
             focusView = mEmailView;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
+            mEmailView.setError("El correo es inválido!");
             focusView = mEmailView;
             cancel = true;
         }
@@ -299,6 +305,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             if (response.data() != null){
                                 user.setNames(response.data().signIn().name);
                                 user.setUsername(response.data().signIn.username);
+                                user.setEmail(response.data().signIn.email);
+                                user.setToken(response.data().signIn.token);
+                                user.setClient(response.data().signIn.client);
+
+                                user.setTeamsOfUser(new ArrayList<Team>());
+                                user.setMatchesOfUser(new ArrayList<Match>());
+                                user.setMessagesOfUser(new ArrayList<Message>());
+                                user.setNamesOfTeams(new HashSet<String>());
 
                                 Log.d(TAG, "answer2: "+response.data().signIn().name());
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -308,7 +322,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                 LoginActivity.this.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        mPasswordView.setError(getString(R.string.error_incorrect_password));
+                                        mPasswordView.setError("Las credenciales son inválidas");
                                         mPasswordView.requestFocus();
                                     }
                                 });
@@ -323,7 +337,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return true;
 
         }
-
 
     }
 }

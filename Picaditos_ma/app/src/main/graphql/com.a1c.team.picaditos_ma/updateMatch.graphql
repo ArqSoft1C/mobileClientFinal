@@ -1,0 +1,13 @@
+mutation UpdateMatch(
+    $team_away_id: String!
+    $id: Int!
+){
+  updateMatch(
+    match:{
+      team_away_id: $team_away_id
+    },
+    id: $id
+  ){
+    team_away_id
+  }
+}

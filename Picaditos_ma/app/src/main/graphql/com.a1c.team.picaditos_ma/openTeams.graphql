@@ -1,0 +1,8 @@
+query GetOpenTeams{
+  openTeams{
+    id
+    name
+    captain
+    squad
+  }
+}

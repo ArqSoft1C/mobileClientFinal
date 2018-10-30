@@ -1,0 +1,16 @@
+query GetMatchByTeam(
+    $team: String!
+){
+  matchByTeam(
+  team:$team
+  ){
+    id
+    court_id
+    team_home_id
+    team_away_id
+    score_home
+    score_away
+    played
+    date
+  }
+}

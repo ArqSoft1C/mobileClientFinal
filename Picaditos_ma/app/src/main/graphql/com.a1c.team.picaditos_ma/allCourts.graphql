@@ -1,0 +1,10 @@
+query GetAllCourts{
+  allCourts{
+    id
+    name
+    latitude
+    longitude
+    address
+    price_hour
+  }
+}

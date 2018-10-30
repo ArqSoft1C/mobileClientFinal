@@ -1,0 +1,8 @@
+query MessagesByUser($username:String!){
+  messageByUser(username:$username){
+    user1
+    user2
+    subject
+    content
+  }
+}

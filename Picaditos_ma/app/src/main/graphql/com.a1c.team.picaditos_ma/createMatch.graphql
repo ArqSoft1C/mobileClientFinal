@@ -1,0 +1,28 @@
+mutation CreateMatch(
+    $court_id: Int!
+    $team_home_id: String!
+    $score_home: Int
+    $score_away: Int
+    $played: Boolean
+    $date: String!
+){
+  createMatch(
+    match:{
+      court_id: $court_id
+      team_home_id: $team_home_id
+      score_home: $score_home
+      score_away: $score_away
+      played: $played
+      date: $date
+    }
+  ){
+    id
+    court_id
+    team_home_id
+    team_away_id
+    score_home
+    score_away
+    played
+    date
+  }
+}

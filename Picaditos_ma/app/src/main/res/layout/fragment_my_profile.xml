@@ -48,15 +48,6 @@
         android:textSize="22sp" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="102dp"
-        android:layout_height="72dp"
-        android:layout_below="@+id/name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:src="@mipmap/ball" />
-
-    <ImageView
         android:id="@+id/imageView5"
         android:layout_width="149dp"
         android:layout_height="120dp"

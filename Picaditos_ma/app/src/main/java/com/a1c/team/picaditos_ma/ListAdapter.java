@@ -8,51 +8,47 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-/** Adaptador de ListView universal, para www.jarroba.com
- * @author Ramon Invarato Menéndez
- */
 public abstract class ListAdapter extends BaseAdapter {
 
-    private ArrayList<?> entradas;
+    private ArrayList<?> entries;
     private int R_layout_IdView;
-    private Context contexto;
+    private Context context;
 
-    public ListAdapter(Context contexto, int R_layout_IdView, ArrayList<?> entradas) {
+    public ListAdapter(Context context, int R_layout_IdView, ArrayList<?> entries) {
         super();
-        this.contexto = contexto;
-        this.entradas = entradas;
+        this.context = context;
+        this.entries = entries;
         this.R_layout_IdView = R_layout_IdView;
     }
 
     @Override
-    public View getView(int posicion, View view, ViewGroup pariente) {
+    public View getView(int pos, View view, ViewGroup pariente) {
         if (view == null) {
-            LayoutInflater vi = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = vi.inflate(R_layout_IdView, null);
         }
-        onEntrada (entradas.get(posicion), view);
+        onEntry (entries.get(pos), view);
         return view;
     }
 
     @Override
     public int getCount() {
-        return entradas.size();
+        return entries.size();
     }
 
     @Override
-    public Object getItem(int posicion) {
-        return entradas.get(posicion);
+    public Object getItem(int pos) {
+        return entries.get(pos);
     }
 
     @Override
-    public long getItemId(int posicion) {
-        return posicion;
+    public long getItemId(int pos) {
+        return pos;
     }
-
-    /** Devuelve cada una de las entradas con cada una de las vistas a la que debe de ser asociada
-     * @param entrada La entrada que será la asociada a la view. La entrada es del tipo del paquete/handler
+    /** Devuelve cada una de las entries con cada una de las vistas a la que debe de ser asociada
+     * @param entry La entrada que será la asociada a la view. La entrada es del tipo del paquete/handler
      * @param view View particular que contendrá los datos del paquete/handler
      */
-    public abstract void onEntrada (Object entrada, View view);
+    public abstract void onEntry (Object entry, View view);
 
 }

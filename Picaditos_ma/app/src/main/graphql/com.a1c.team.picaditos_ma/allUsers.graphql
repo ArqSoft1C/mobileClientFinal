@@ -1,5 +1,10 @@
-query getAllUsers{
+query GetAllUsers{
   allUsers {
     email
+    name
+    lastname
+    username
+    picture
+    phone
   }
 }

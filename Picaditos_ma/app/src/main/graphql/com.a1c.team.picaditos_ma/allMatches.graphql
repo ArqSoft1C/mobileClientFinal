@@ -1,0 +1,12 @@
+query GetAllMatches{
+  allMatches{
+    id
+    team_home_id
+    team_away_id
+    score_home
+    score_away
+    played
+    date
+    court_id
+  }
+}

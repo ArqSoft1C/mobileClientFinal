@@ -1,0 +1,9 @@
+query TeamById(
+    $id: String!
+){
+  teamById(
+  id:$id
+  ){
+    name
+  }
+}

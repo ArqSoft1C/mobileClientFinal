@@ -1,0 +1,21 @@
+mutation MutationCreateMessage(
+    $user1: String!
+    $user2: String!
+    $subject: String!
+    $content: String!
+){
+  createMessage(
+    message:{
+      user1: $user1
+      user2: $user2
+      subject: $subject
+      content: $content
+    }
+  ){
+    ID
+    user1
+    user2
+    subject
+    content
+  }
+}

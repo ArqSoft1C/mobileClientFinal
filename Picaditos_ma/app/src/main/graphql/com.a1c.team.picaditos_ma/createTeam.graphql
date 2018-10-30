@@ -1,0 +1,21 @@
+mutation CreateTeam(
+    $name: String!
+    $sport: String!
+    $captain: String!
+    $squad: [String]!
+){
+  createTeam(
+    team:{
+      name: $name
+      sport: $sport
+      captain: $captain
+      squad: $squad
+    }
+  ){
+    id
+    name
+    sport
+    captain
+    squad
+  }
+}

@@ -16,6 +16,9 @@
                 <item
                     android:id="@+id/nav_create_team"
                     android:title="   Crear Equipo" />
+                <item
+                    android:id="@+id/nav_open_teams"
+                    android:title="   Equipos Abiertos" />
             </menu>
         </item>
         <item android:title="Partidos">
@@ -24,22 +27,25 @@
                     android:id="@+id/nav_my_matches"
                     android:title="   Mis Partidos" />
                 <item
+                    android:id="@+id/nav_create_match"
+                    android:title="   Crear Partido" />
+                <item
                     android:id="@+id/nav_request_match"
-                    android:title="   Armar Picadito" />
+                    android:title="   Partidos Abiertos" />
             </menu>
         </item>
         <item android:title="Canchas">
             <menu>
                 <item
                     android:id="@+id/nav_courts"
-                    android:title="   Localizar Canchas" />
+                    android:title="   Ver Canchas" />
             </menu>
         </item>
         <item android:title="Mensajes">
             <menu>
                 <item
                     android:id="@+id/nav_inbox"
-                    android:title="   Mensajes Recibidos" />
+                    android:title="   Ver Mensajes" />
                 <item
                     android:id="@+id/nav_send_message"
                     android:title="   Enviar Mensaje" />
